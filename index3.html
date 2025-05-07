@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dumb Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        body{
+            font-family: "Fruktur", system-ui;
+            background-color: #00ffff;
+            justify-content: center;
+            align-items: center;
+            color: #ff6347;
+            text-align: center;
+        }
+        p{
+            color: #f000ff;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: "Fruktur", system-ui;
+            color: #00ff00;
+            background-color: #000000;
+            border: 1px solid #00ffff;
+        }
+        button {
+            font-family: "Fruktur", system-ui;
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #000000;
+            color: #00ffff;
+            border: 1px solid #00ffff;
+        }
+        a{
+            text-decoration: none;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+<h1>Chatbot</h1>
+<p id="Label">Type your message below:</p>
+<input type="text" id="userInput" placeholder="Type your message here...">
+<br><br>
+<button onclick="deliver()">Send</button><br>
+<button><a href="index.html">back</a></button><br>
+
+<br><br>
+<p>Developed By Hiten Gupta</p>
+<script>
+    function deliver() {
+
+        function typeEffect(text, elementId) {
+            let typingElement = document.getElementById(elementId);
+            typingElement.innerHTML = ""; // Clear previous text
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    typingElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, 100); // Adjust speed here
+                }
+            }
+
+            type();
+        }
+        let response = "Sorry, I can't help you with that. I'm Useless Chatbot.";
+        typeEffect(response, 'Label');
+        document.getElementById('userInput').value = '';
+    }
+</script>
+</body>
+</html>

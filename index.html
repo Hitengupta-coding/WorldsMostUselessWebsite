@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World's Most Useless Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        @keyframes rotate {
+            0% {
+                transform-origin: center;
+                transform: rotate(0deg);
+            }
+            25% {
+                transform-origin: center;
+                transform: rotate(90deg);
+            }
+            50% {
+                transform-origin: center;
+                transform: rotate(180deg);
+            }
+            75% {
+                transform-origin: center;
+                transform: rotate(270deg);
+            }
+            100% {
+                transform-origin: center;
+                transform: rotate(360deg);
+            }
+        }
+
+        body{
+            font-family: "Fruktur", system-ui;
+            background-color: #00ffff;
+            justify-content: center;
+            align-items: center;
+            color: #ff6347;
+            text-align: center;
+        }
+
+        #main{
+            background-color: #ff0000;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 5px solid #111111;
+            color: #ffffff;
+            font-family: "Fruktur", system-ui;
+        }
+        h1:hover{
+            animation:rotate 500ms linear 1s;
+        }
+
+        button, a{
+            background-color: #ff00ff;
+            width: 100px;
+            height: 60px;
+            text-decoration: none;
+            border-radius: 2%;
+            margin: 5px auto;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: "Fruktur", system-ui;
+        }
+    </style>
+</head>
+<body>
+      <h1>Hello, Welcome to The World's Most Useless Website!</h1>
+      <br><br>
+      <button id="main" onclick="ask()">Don't Press</button><br>
+      <button><a href="index2.html">Play</a></button><br><!--This is fake loading page.-->
+      <button><a href="index3.html">Useless Chatbot</a></button><br>
+      <button onclick="changeColor()">Unknown</button>
+<script>
+    function irritate() {
+        const popups = ["Why are you here, this is an useless website", "You are wasting your time", "Why are you here?", "This is a useless website"];
+        const annoy = popups[Math.floor(Math.random() * popups.length)];
+        alert(annoy);
+    }
+    setInterval(irritate, 15000);
+
+    function changeColor() {
+        const rainbowcolors = ["#ff0000", "#ff7f00", "#ffff00", "#7fff00", "#00ff00", "#00ff7f", "#00ffff", "#007fff", "#0000ff", "#7f00ff", "#ff00ff", "#ff007f"];
+        const randomColor = rainbowcolors[Math.floor(Math.random() * rainbowcolors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    function ask() {
+    alert("You pressed the button! But why? This is a useless website!");
+    }
+
+</script>
+</body>
+</html>
