@@ -51,7 +51,7 @@
             font-family: "Fruktur", system-ui;
         }
         h1:hover{
-            animation:rotate 500ms linear 1s;
+            animation:rotate 500ms linear;
         }
 
         button, a{
@@ -69,12 +69,14 @@
     </style>
 </head>
 <body>
-      <h1>Hello, Welcome to The World's Most Useless Website!</h1>
+      <h1 id="label">Hello, Welcome to The World's Most Useless Website!</h1>
       <br><br>
       <button id="main" onclick="ask()">Don't Press</button><br>
       <button><a href="https://hitengupta-coding.github.io/WorldsMostUselessWebsite/index2.html">Play</a></button><br><!--This is fake loading page.-->
       <button><a href="https://hitengupta-coding.github.io/WorldsMostUselessWebsite/index3.html">Useless Chatbot</a></button><br>
       <button onclick="changeColor()">Unknown</button>
+      <button onclick="dispense()">Click here for Joke</button>
+    
 <script>
     function irritate() {
         const popups = ["Why are you here, this is an useless website", "You are wasting your time", "Why are you here?", "This is a useless website"];
@@ -91,6 +93,39 @@
 
     function ask() {
     alert("You pressed the button! But why? This is a useless website!");
+    }
+
+    function getRandomJoke() {
+        const jokes = [
+            "Why don’t skeletons fight each other? They don’t have the guts!",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call cheese that isn't yours? Nacho cheese!",
+            "Why couldn't the bicycle stand up by itself? It was two tired!",
+            "What did one wall say to the other? I'll meet you at the corner!",
+            "Why did the math book look sad? It had too many problems.",
+            "Why can't your nose be 12 inches long? Because then it would be a foot!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "Why do we never tell secrets on a farm? Because the potatoes have eyes and the corn has ears!",
+            "Why couldn’t the leopard play hide and seek? Because he was always spotted!",
+            "Why did the physics teacher break up with the biology teacher? There was no chemistry.",
+            "Why don’t oysters give to charity? Because they are shellfish!",
+            "Why was the tomato blushing? Because it saw the salad dressing!",
+            "What do you call a snowman with a six-pack? An abdominal snowman!",
+            "Why did the computer go to the doctor? Because it caught a virus!",
+            "Why did the balloon go near the needle? It was looking for a pop star!",
+            "Why are skeletons so calm? Because nothing gets under their skin!",
+            "What do you call a dinosaur with an extensive vocabulary? A thesaurus!",
+            "Why did the cookie go to the doctor? Because it felt crumby!"
+        ];
+
+        let jooke = jokes[Math.floor(Math.random() * jokes.length)];
+        let Label = document.getElementById("label");
+        Label.innerHTML = jooke;
+    }
+
+    function dispense() {
+        getRandomJoke();
     }
 
 </script>
